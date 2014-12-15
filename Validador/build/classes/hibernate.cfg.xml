@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        
+        <!--<property name="hibernate.connection.datasource">jdbc/Diagnostico</property>-->
+        <!-- Driver do BD de conexão -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <!--Dialect do banco de dados--> 
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>        
+        <!--Endereço de conexão--> 
+        <property name="hibernate.connection.url">jdbc:postgresql://150.164.192.75:5432/TELESSAUDE_VLD</property>        
+        <!--<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/TELESSAUDE</property>-->        
+        <!--Usuário--> 
+        <property name="hibernate.connection.username">postgres</property>        
+        <!--Senha--> 
+        <property name="hibernate.connection.password">dev@tele</property>
+        <!--<property name="hibernate.connection.password">admin</property>-->
+        
+        <!--        <property name="hibernate.default_schema" >teletransferencia</property>-->
+        
+
+        
+        <!-- C3P0 connection pool. -->  
+        <!--        <property name="c3p0.min_size">1</property>  
+        <property name="c3p0.max_size">2</property>  
+        <property name="c3p0.timeout">2400</property>  
+        <property name="c3p0.acquire_increment">1</property>  
+        <property name="c3p0.max_statements">30</property>  -->
+  
+        <!-- Exibe comandos SQL na saída padrão. -->  
+        <property name="show_sql">true</property>  
+        <property name="use_sql_comments">false</property>  
+        <property name="hibernate.format_sql">true</property>  
+        <property name="current_session_context_class">thread</property>    
+        
+        <!-- 
+                Gera a base de dados a partir do modelo de objetos 
+                create - apaga a base e gera uma nova
+                update - gera a base em caso de modificação e criação, não apaga a base atual
+        -->
+        <property name="hibernate.hbm2ddl.auto">none</property>
+        <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
+        <property name="connection_pool_size">1</property>
+        
+        <!-- Classes que são mapeadas no hibernate  -->
+        <!-- Utilizadas pelo diagnostico -->
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Categoria" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Cidade" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Cliente" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Configuracao" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Contato" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.ConteudoExame" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.CreditoPlantao" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.DiscussaoCaso" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Endereco" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Especialidade" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Especialista" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Estado" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Exame" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.ExameCorrompido" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.FraseEspecialistaEspecialidade" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.HistoricoClinico" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.HorarioPlantao" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Laudo" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.ModeloConteudoExame" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.ModeloHistoricoClinico" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.ModeloLaudo" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.OrgaoEmissor" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Paciente" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Pais" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.PerfilUsuario" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Plantao" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.PontoRemoto" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Prioridade" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Status" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.TipoConteudoExame" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.TipoExame" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.TipoLaudo" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.entity.Usuario" />
+        <mapping class="br.ufmg.hc.telessaude.diagnostico.dominio.glasgow.EcgAnalys" />
+        
+        <!-- Utilizadas pelo diagnostico -->
+        <!--        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.EspecialistaTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.ExameTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.LaudoTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.MunicipioTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.PacienteTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.PermissaoTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.PontoRemotoTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.ProjetoTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.StatusTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.TipoExameTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.UsuarioTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.ConfiguracaoTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.VersaoTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.MensagemTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.GrupoMensagemTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.DetalheOcularTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.LaudoRetinografiaTransferencia" />
+        <mapping class="br.ufmg.hc.telessaude.teletransferencia.entity.RespostaRetinografiaTransferencia" />-->
+        
+    </session-factory>
+</hibernate-configuration>
